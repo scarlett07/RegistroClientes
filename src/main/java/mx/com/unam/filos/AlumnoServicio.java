@@ -2,8 +2,11 @@ package mx.com.unam.filos;
 
 import java.util.*;
 
+import javax.websocket.server.PathParam;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -34,5 +37,22 @@ public class AlumnoServicio {
 	@GET
 	public List<Alumno> alumnos() {
 		return new ArrayList<>(alumnos.values());
+	}
+
+	/*
+	 * Método para guardar un nuevo alumno Recibe como parametro alumno
+	 * 
+	 * @param Alumno
+	 */
+
+	@POST
+	public void addAlumno(Alumno alumno) {
+		alumnos.put(alumnos.size() + 1, alumno);
+	}
+
+	@Path("/{id}")
+	@DELETE
+	public void remove(@PathParam("id") Integer id) {
+		alumnos.remove(id);
 	}
 }

@@ -16,6 +16,10 @@ public class Alumno {
 		this.correo = correo;
 	}
 
+	public Alumno() {
+		super();
+	}
+
 	public int getNumeroBoleta() {
 		return numeroBoleta;
 	}
