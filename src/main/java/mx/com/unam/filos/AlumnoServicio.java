@@ -2,7 +2,7 @@ package mx.com.unam.filos;
 
 import java.util.*;
 
-import javax.websocket.server.PathParam;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
